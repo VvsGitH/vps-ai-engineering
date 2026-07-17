@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
 """PreToolUse hook: asks for confirmation before `git commit` runs via Bash or PowerShell.
 
-jq-free by design — jq is not guaranteed to be installed on every machine
-that clones this repo, but python3 is a safe bet on this project.
+jq-free by design — jq is not guaranteed to be installed on every machine that
+clones this repo. hooks.json invokes this with `python ... || python3 ...` so it
+runs whether the interpreter is named `python` (typical on Windows) or `python3`
+(typical on Linux/macOS).
+
+The command matcher tolerates chained/multi-line commands (`cd repo && git commit`,
+or `git commit` on its own line) and leading env-var assignments
+(`GIT_AUTHOR_DATE=... git commit`).
 """
 import json
 import re
 import sys
 
 COMMIT_PATTERN = re.compile(
-    r"(^|[;&|])\s*git(\s+[A-Za-z0-9_.=/:-]+)*\s+commit(\s|$)"
+    r"(^|[;&|\n\r])\s*(?:\w+=\S*\s+)*git(\s+[A-Za-z0-9_.=/:-]+)*\s+commit(\s|$)"
 )
 
 
