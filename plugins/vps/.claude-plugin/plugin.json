@@ -1,0 +1,10 @@
+{
+  "name": "vps",
+  "description": "My personal plugin for AI engineering",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vito Paparella Santorsola",
+    "email": "vs.paparella@gmail.com"
+  },
+  "repository": "https://github.com/VvsGitH/vps-ai-engineering"
+}

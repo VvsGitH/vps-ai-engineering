@@ -1,0 +1,14 @@
+{
+  "name": "vps-ai-engineering",
+  "description": "My personal marketplace for my engineering-related plugins",
+  "owner": {
+    "name": "Vito Paparella Santorsola",
+    "email": "vs.paparella@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "vps",
+      "source": "./plugins/vps"
+    }
+  ]
+}
