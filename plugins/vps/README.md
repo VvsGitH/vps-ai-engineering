@@ -18,3 +18,10 @@ Le skill in `skills/` partono dal repo [mattpocock/skills](https://github.com/ma
 - `to-spec` — trasforma la conversazione corrente in una spec pubblicata sull'issue tracker
 - `to-tickets` — scompone un piano/spec/conversazione in ticket tracer-bullet con dipendenze esplicite
 - `writing-great-skills` — riferimento su come scrivere ed editare bene le skill
+
+## Hooks
+
+Hook `PreToolUse` (su `Bash`/`PowerShell`) definiti in `hooks/hooks.json`:
+
+- `block-git-commit.py` — chiede conferma prima di eseguire un `git commit`
+- `strip-co-authored-by.py` — rimuove dai messaggi di commit i trailer di attribuzione AI (`Co-Authored-By: Claude <…>` e `🤖 Generated with [Claude Code](…)`), riscrivendo il comando prima dell'esecuzione. I co-author umani non vengono toccati.

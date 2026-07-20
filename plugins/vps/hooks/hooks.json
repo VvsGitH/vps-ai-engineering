@@ -7,6 +7,10 @@
           {
             "type": "command",
             "command": "python \"${CLAUDE_PLUGIN_ROOT}/hooks/block-git-commit.py\" 2>/dev/null || python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/block-git-commit.py\""
+          },
+          {
+            "type": "command",
+            "command": "python \"${CLAUDE_PLUGIN_ROOT}/hooks/strip-co-authored-by.py\" 2>/dev/null || python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/strip-co-authored-by.py\""
           }
         ]
       }
