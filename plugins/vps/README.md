@@ -23,5 +23,5 @@ Le skill in `skills/` partono dal repo [mattpocock/skills](https://github.com/ma
 
 Hook `PreToolUse` (su `Bash`/`PowerShell`) definiti in `hooks/hooks.json`:
 
-- `block-git-commit.py` — chiede conferma prima di eseguire un `git commit`
+- `block-dangerous-commands.py` — chiede conferma prima di eseguire comandi potenzialmente distruttivi: `git commit`, `git reset --hard`, `git push --force`, cancellazioni git (`git branch -D`, `git tag -d`, `git clean -f`) e cancellazioni filesystem ricorsive (`rm -r` / `find -delete`; su PowerShell `Remove-Item -Recurse`)
 - `strip-co-authored-by.py` — rimuove dai messaggi di commit i trailer di attribuzione AI (`Co-Authored-By: Claude <…>` e `🤖 Generated with [Claude Code](…)`), riscrivendo il comando prima dell'esecuzione. I co-author umani non vengono toccati.
